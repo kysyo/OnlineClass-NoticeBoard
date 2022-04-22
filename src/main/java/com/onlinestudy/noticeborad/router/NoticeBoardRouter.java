@@ -18,10 +18,10 @@ public class NoticeBoardRouter {
     @Bean
     public RouterFunction<ServerResponse> route() {
         return RouterFunctions
-                .route(GET("/noticeboard/view"), noticeBoardHandler::viewNoticeBoardHandler)
-                .andRoute(POST("/noticeboard/board/set"), noticeBoardHandler::writeBoardHandler)
-                .andRoute(POST("/noticeboard/comment/set"), noticeBoardHandler::writeCommentHandler)
-                .andRoute(POST("/noticeboard/operator/show"), noticeBoardHandler::showNoticeContentYnHandler)
+                .route(GET("/noticeboard/view"), noticeBoardHandler::viewNoticeBoardHandler)                    // 게시판 열람
+                .andRoute(POST("/noticeboard/board/set"), noticeBoardHandler::writeBoardHandler)                // 게시글 작성
+                .andRoute(POST("/noticeboard/comment/set"), noticeBoardHandler::writeCommentHandler)            // 댓글 작성
+                .andRoute(POST("/noticeboard/operator/show"), noticeBoardHandler::showNoticeContentYnHandler)   // 게시글, 댓글 숨김처리
                 ;
     }
 }
